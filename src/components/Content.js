@@ -13,6 +13,10 @@ class Content extends Component {
         }
     };
 
+    scrollToBottom() {
+        this.bottomRef.scrollIntoView({ behavior: "smooth"});
+      }
+
     componentDidMount() {
         const messagesRef = db.ref('messages');
 
@@ -24,6 +28,15 @@ class Content extends Component {
                 return {msgs: arr};
               });
         });
+
+        this.scrollToBottom();
+
+        this.props.updateData(this.topRef);
+    }
+    
+     
+    componentWillReceiveProps(props) {
+        this.setState({username: props.username});
     }
 
     sendHandler(message) {
@@ -34,18 +47,25 @@ class Content extends Component {
         return (
             <div>
                 <div className="content">
-                    <a href="#top" className="navTop"><span>&uarr;</span></a>
-                    <div id="top"></div>
+                    <div 
+                        ref={(el) => { this.topRef = el }}>
+                    </div>
                     <MessageList messages={this.state.msgs} username={this.state.username}/>
-                    <a href="#down" className="navDown"><span>&darr;</span></a>
-                    <div id="down"></div>
+                    <div 
+                        ref={(el) => { this.bottomRef = el }}>
+                    </div>
                 </div>
                 <div className="input">
+                    <div onClick = {this.scrollToBottom.bind(this)} className="navDown"><span>&darr;</span></div>
                     <InputMessage username={this.state.username} onSend={this.sendHandler.bind(this)}/>
                 </div>
             </div>
         );
     }
+    
+    componentDidUpdate() {
+        this.scrollToBottom();
+      }
 }
 
 export default Content;

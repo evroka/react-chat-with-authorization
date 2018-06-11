@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 import { auth } from '../firebase';
 
 const PasswordForgetPage = () =>
-  <div>
-    <h1>PasswordForget</h1>
+  <div className="text-center mt-5">
+    <h1 className="h3 mb-3 font-weight-normal text-center">Password forget</h1>
     <PasswordForgetForm />
   </div>
 
@@ -48,14 +48,15 @@ class PasswordForgetForm extends Component {
     const isInvalid = email === '';
 
     return (
-      <form onSubmit={this.onSubmit}>
-        <input
+      <form className="form-signin text-center" onSubmit={this.onSubmit} >
+      <label className="sr-only" for="inputEmail"></label>
+        <input id="inputEmail" className="form-control"
           value={this.state.email}
           onChange={event => this.setState(byPropKey('email', event.target.value))}
           type="text"
           placeholder="Email Address"
         />
-        <button disabled={isInvalid} type="submit">
+        <button disabled={isInvalid} type="submit" className="btn btn-outline-info btn-block mt-3">
           Reset My Password
         </button>
 

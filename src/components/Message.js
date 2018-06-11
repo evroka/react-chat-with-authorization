@@ -8,6 +8,10 @@ class Message extends Component {
         };
     }
 
+    componentWillReceiveProps(props) {
+        this.setState({username: props.username});
+      }
+
     getLogoPath() {
         const pathStart = 'https://filin.mail.ru/letters/default/45x45/';
         const pathEnd = '/1.png';

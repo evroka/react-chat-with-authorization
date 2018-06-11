@@ -15,11 +15,11 @@ const Navigation = () =>
   </AuthUserContext.Consumer>
 
 const NavigationAuth = () =>
-  <ul>
-    <li><Link to={routes.CHAT}>Chat</Link></li>
-    <li><Link to={routes.ACCOUNT}>Account</Link></li>
-    <li><SignOutButton /></li>
-  </ul>
+  <nav className="nav flex-column navigation ">
+    <li className="navbar-brand"><Link to={routes.CHAT}><button className="btn btn-outline-info btn-block"type="button">Chat</button></Link></li>
+    <li className="navbar-brand"><Link to={routes.ACCOUNT}><button className="btn btn-outline-info btn-block"type="button">Account</button></Link></li>
+    <li className="navbar-brand"><SignOutButton /></li>
+  </nav>
 
 const NavigationNonAuth = () =>
   <div>
@@ -27,14 +27,3 @@ const NavigationNonAuth = () =>
   </div>
 
 export default Navigation;
-
-
-/*<ul>
-<li><Link to={routes.SIGN_IN}>Sign In</Link></li>
-<li><Link to={routes.LANDING}>Landing</Link></li>
-</ul>
-<div>
-    <SignInPage/>
-  </div>
-
-*/

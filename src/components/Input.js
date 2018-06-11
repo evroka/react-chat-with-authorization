@@ -13,6 +13,10 @@ class InputMessage extends Component {
         this.setState({ text: event.target.value });
     }
 
+    componentWillReceiveProps(props) {
+        this.setState({username: props.username});
+      }
+
     handleSubmit(event) { 
         event.preventDefault();
         if (this.state.text === '') {
@@ -37,7 +41,7 @@ class InputMessage extends Component {
                                 className="form-control mb-3 col-lg-10" 
                                 placeholder="Введите сообщение"/>
                     <span className="input-group-btn">
-                        <input type='submit' value='Send' className='btn btn-dark ml-3 mt-3'/>
+                        <input type='submit' value='Send' className='btn btn-info ml-3 mt-3'/>
                     </span>
                 </div>
             </form>

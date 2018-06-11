@@ -1,8 +1,54 @@
+.app-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
 .container {
   width: 700px;
   background-color:whitesmoke;
   padding: 0;
   overflow-x: hidden;
+  margin: 0;
+}
+
+.form-signin{
+  max-width: 330px;
+  margin: 0 auto;
+}
+
+.navigation {
+  list-style: none;
+  margin-top: 75px;;
+  padding: 0;
+  width: 120px;
+}
+
+.navigation li {
+  text-align: right;
+}
+
+.navigation a {
+  text-decoration: none;
+  font-size: 16px;
+  color: rgb(71, 71, 71);
+}
+
+.navigation a:hover {
+  color:  rgba(23, 162, 184);
+}
+
+.account-wrapper {
+  width: 700px; 
+}
+
+.top-chat {
+  height: 78px;
+  z-index: 10;
+}
+
+.top-chat h2 {
+  padding-left: 30px;
+  line-height: 78px;
 }
 
 .content {
@@ -16,7 +62,7 @@
 
 .content::-webkit-scrollbar {
   display: none;
-  }
+}
 
 .avatar {
   margin: 0 auto; 
@@ -113,15 +159,13 @@
 }
 
 .navTop {
-  display: block;
+  position: absolute;
+  top: 78px;
   background-color: transparent;
   opacity: 0.5;
   width: 700px;
   height: 30px;
-  position: fixed;
-  top: 78px;
   text-align: right;
-  text-decoration: none;
   color: gray;
   z-index: 1;
   transition: background-color 0.5s ease-out;
@@ -141,13 +185,11 @@
 }
 
 .navDown {
-  display: block;
+  margin-top: -30px;
   background-color: transparent;
   opacity: 0.5;
   width: 700px;
   height: 30px;
-  position: fixed;
-  top: 828px;
   text-align: right;
   text-decoration: none;
   color: grey;

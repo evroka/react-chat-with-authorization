@@ -6,9 +6,10 @@ import { PasswordForgetLink } from './PasswordForget';
 import { auth } from '../firebase';
 import * as routes from '../constants/routes';
 
+
 const SignInPage = ({ history }) =>
-  <div>
-    <h1>Please sign in</h1>
+  <div className="text-center mt-5">
+    <h1 className="h3 mb-3 font-weight-normal text-center">Please sign in</h1>
     <SignInForm history={history} />
     <PasswordForgetLink />
     <SignUpLink />
@@ -65,21 +66,23 @@ class SignInForm extends Component {
       email === '';
 
     return (
+      
       <form className="form-signin text-center" onSubmit={this.onSubmit}>
         <label className="sr-only" for="inputEmail"></label>
-        <input id="inputEmail" required="" autofocus=""
+        <input id="inputEmail" className="form-control" required="" autofocus=""
           value={email}
           onChange={event => this.setState(byPropKey('email', event.target.value))}
-          type="text"
+          type="email"
           placeholder="Email Address"
         />
-        <input
+        <label className="sr-only" for="inputPassword"></label>
+        <input id="inputPassword" className="form-control mt-3" required=""
           value={password}
           onChange={event => this.setState(byPropKey('password', event.target.value))}
           type="password"
           placeholder="Password"
         />
-        <button disabled={isInvalid} type="submit">
+        <button disabled={isInvalid} type="submit" className="btn btn-lg btn-info btn-block mt-3">
           Sign In
         </button>
 

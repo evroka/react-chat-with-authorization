@@ -8,8 +8,8 @@ import withAuthorization from './withAuthorization';
 const AccountPage = () =>
   <AuthUserContext.Consumer>
     {authUser =>
-      <div>
-        <h1>Account: {authUser.email}</h1>
+      <div className="account-wrapper">
+        <h1 className="h3 pt-5 mb-5 font-weight-normal text-center">Account: {authUser.email}</h1>
         <PasswordForgetForm />
         <PasswordChangeForm />
       </div>
