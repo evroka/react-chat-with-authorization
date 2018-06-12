@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { auth } from '../firebase';
 
 const PasswordForgetPage = () =>
-  <div className="text-center mt-5">
+  <div className="text-center mt-5 password-forget-form">
     <h1 className="h3 mb-3 font-weight-normal text-center">Password forget</h1>
     <PasswordForgetForm />
   </div>

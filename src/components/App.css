@@ -16,6 +16,16 @@
   margin: 0 auto;
 }
 
+.password-forget-form {
+  max-width: 330px;
+  margin-left: 100px;
+}
+
+.sign-up-form {
+  max-width: 330px;
+  margin-left: 100px;
+}
+
 .navigation {
   list-style: none;
   margin-top: 75px;;
@@ -52,7 +62,7 @@
 }
 
 .content {
-  height: 780px;
+  height: calc(100vh - 78px - 95px);
   padding-top: 15px;
   overflow-x: hidden;
   overflow-y: scroll;

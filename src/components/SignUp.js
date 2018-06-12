@@ -8,7 +8,7 @@ import { auth, db } from '../firebase';
 import * as routes from '../constants/routes';
 
 const SignUpPage = ({ history }) =>
-  <div className="text-center mt-5">
+  <div className="text-center mt-5 sign-up-form">
     <h1 className="h3 mb-3 font-weight-normal text-center">SignUp</h1>
     <SignUpForm history={history} />
   </div>
@@ -81,28 +81,28 @@ class SignUpForm extends Component {
     return (
       <form onSubmit={this.onSubmit} className="form-signin text-center">
         <label className="sr-only" for="fullName"></label>
-        <input id="fullName" className="form-control"
+        <input id="fullName" className="form-control mt-3"
           value={username}
           onChange={event => this.setState(byPropKey('username', event.target.value))}
           type="text"
           placeholder="Full Name"
         />
         <label className="sr-only" for="emailAddress"></label>
-        <input id="emailAddress" className="form-control"
+        <input id="emailAddress" className="form-control mt-3"
           value={email}
           onChange={event => this.setState(byPropKey('email', event.target.value))}
           type="text"
           placeholder="Email Address"
         />
         <label className="sr-only" for="passwordOne"></label>
-        <input id="passwordOne" className="form-control"
+        <input id="passwordOne" className="form-control mt-3"
           value={passwordOne}
           onChange={event => this.setState(byPropKey('passwordOne', event.target.value))}
           type="password"
           placeholder="Password"
         />
         <label className="sr-only" for="passwordTwo"></label>
-        <input id="passwordTwo" className="form-control"
+        <input id="passwordTwo" className="form-control mt-3"
           value={passwordTwo}
           onChange={event => this.setState(byPropKey('passwordTwo', event.target.value))}
           type="password"
