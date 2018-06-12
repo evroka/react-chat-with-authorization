@@ -31,6 +31,7 @@ class Message extends Component {
          n -= 65;
         }
         n = n % 16;
+        let padStart = require('string.prototype.padstart');
         let addr = n.toString().padStart(2, "0");
         const resultPath = pathStart + str + '/' + addr + pathEnd;
         return resultPath;
