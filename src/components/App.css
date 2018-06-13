@@ -28,9 +28,10 @@
 
 .navigation {
   list-style: none;
-  margin-top: 75px;;
+  margin-top: 75px;
   padding: 0;
   width: 120px;
+  flex-direction: column;
 }
 
 .navigation li {
@@ -53,12 +54,17 @@
 
 .top-chat {
   height: 78px;
-  z-index: 10;
+  z-index: 100;
 }
 
 .top-chat h2 {
   padding-left: 30px;
   line-height: 78px;
+  margin: 0;
+}
+
+.content-wrapper {
+  z-index: -1;
 }
 
 .content {
@@ -169,8 +175,6 @@
 }
 
 .navTop {
-  position: absolute;
-  top: 78px;
   background-color: transparent;
   opacity: 0.5;
   width: 700px;
@@ -178,6 +182,7 @@
   text-align: right;
   color: gray;
   z-index: 1;
+  position: sticky;
   transition: background-color 0.5s ease-out;
 }
 
@@ -191,7 +196,6 @@
 .navTop:hover {
   background-color: rgba(23, 162, 184, 0.3);
   color: black;
-  text-decoration: none;
 }
 
 .navDown {
@@ -203,7 +207,6 @@
   text-align: right;
   text-decoration: none;
   color: grey;
-  z-index: 1;
   transition: background-color 0.5s ease-out;
 }
 
@@ -215,4 +218,158 @@
   background-color: rgba(23, 162, 184, 0.3);
   color: black;
   text-decoration: none;
+}
+
+.content-wrapper {
+  z-index: -1;
+}
+
+
+@media screen and (min-width: 480px) and (max-width: 1000px) {
+  .navTop {
+    width: 100%;
+  }
+  
+  .input-form {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .navDown {
+    width: 100%;
+  }
+
+  .input-message {
+    margin-left: 0;
+    width: 93%;
+  }
+}
+
+/* @media screen and (max-width: 1050px) {
+  .content {
+    height: calc(100vh - 78px - 95px);
+  }
+
+  .input-form {
+    margin: 0;
+  }
+
+  .input-message {
+    width: 93%; 
+    margin: 0;
+  }
+  
+  .input-message-form {
+    margin: 0;
+    width: 93%; 
+  }
+
+  .input-btn {
+    width: 80%;
+    margin-bottom: 10px;
+    margin-left: 0;
+  }
+
+  .navTop {
+    width: 100% !important;
+  }
+
+  .navDown {
+    width: 100%;
+  }
+
+  .content {
+    height: calc(100vh - 78px - 95px);
+  }
+} */
+
+@media screen and (max-width: 480px) {
+  .app-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .navigation {
+    list-style: none;
+    margin-top: 0;
+    flex-direction: row;
+    padding: 0;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .navbar-brand {
+    margin-right: 0;
+  }
+
+  .nav-btn {
+    margin-left: 0;
+    width: 30vw;
+    height: 24px;
+    padding: 0;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .content {
+    height: calc(100vh - 34px - 78px - 133px);
+  }
+
+  .container {
+    width: 100%;
+  }
+
+  .navTop {
+    width: 100%;
+    top: 112px;
+  }
+
+  .navTop:active {
+    background-color: rgba(23, 162, 184, 0.3);
+    color: black;
+    text-decoration: none;
+  }
+
+  .navDown {
+    width: 100%;
+  }
+
+  .navDown:active {
+    background-color: rgba(23, 162, 184, 0.3);
+    color: black;
+    text-decoration: none;
+  }
+
+  .input-message {
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .input-message-form {
+    width: 90% !important;
+    margin: 0;
+  }
+
+  .input-btn {
+    width: 90%;
+    margin-bottom: 10px;
+    margin: 0 !important;
+  }
+
+  .account-wrapper {
+    width: 100%;
+  }
+
+  .sign-up-form {
+    margin: 0;
+    padding-bottom: 10px;
+    max-width: 100%;
+  }
+
+  .password-forget-form {
+    margin: 0;
+    max-width: 100%;
+    padding-bottom: 10px;
+  }
 }

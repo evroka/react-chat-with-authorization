@@ -15,9 +15,9 @@ const Navigation = () =>
   </AuthUserContext.Consumer>
 
 const NavigationAuth = () =>
-  <nav className="nav flex-column navigation ">
-    <li className="navbar-brand"><Link to={routes.CHAT}><button className="btn btn-outline-info btn-block"type="button">Chat</button></Link></li>
-    <li className="navbar-brand"><Link to={routes.ACCOUNT}><button className="btn btn-outline-info btn-block"type="button">Account</button></Link></li>
+  <nav className="nav navigation ">
+    <li className="navbar-brand"><Link to={routes.CHAT}><button className="btn btn-outline-info btn-block nav-btn"type="button">Chat</button></Link></li>
+    <li className="navbar-brand"><Link to={routes.ACCOUNT}><button className="btn btn-outline-info btn-block nav-btn"type="button">Account</button></Link></li>
     <li className="navbar-brand"><SignOutButton /></li>
   </nav>
 
